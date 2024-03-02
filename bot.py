@@ -51,20 +51,6 @@ bot = telebot.TeleBot(API_TOKEN)
 def handle_start(message):
     if message.chat.type == 'private':
         user_id = message.from_user.id
-
-
-    if check_access(user_id):
-        # Пользователь имеет доступ к разрешенным командам
-        admin_name = message.from_user.first_name
-        admin_greeting = f"👋Здравствуйте, [{admin_name}](tg://user?id={user_id}).\n🧑‍✈️Вы администратор сетки чатов «ᎠᏫᏒᎷᏆᎢᏫᏒᎩ».\n💡Ваш список админских команд доступен ниже."
-
-        admin_keyboard = types.InlineKeyboardMarkup()
-        admin_url_button = types.InlineKeyboardButton(text="Админские команды", url="https://teletype.in/@drmotory/98olfMhylw5")
-        user_url_button = types.InlineKeyboardButton(text="Обычные команды", url="https://teletype.in/@drmotory/commands_support")
-        admin_keyboard.add(admin_url_button, user_url_button)  
-
-        bot.send_message(message.chat.id, admin_greeting, parse_mode='Markdown', reply_markup=admin_keyboard)
-    else:
         welcome_message = (
             f"👋Здравствуйте, [{message.from_user.first_name}](tg://user?id={user_id}).\n"
             "🤖Я бот помощник для сетки чатов «ᎠᏫᏒᎷᏆᎢᏫᏒᎩ».\n"
