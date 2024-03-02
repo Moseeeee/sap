@@ -531,6 +531,7 @@ def send_chat_grid(message):
     
     #ВЫХОД ИЗ ЧАТА
 #СКРЫТАЯ
+allowed_users = ['6282374712']
 @bot.message_handler(func=lambda message: message.text.strip().lower() == '.ливни')
 def leave_chat(message):
     if str(message.from_user.id) in allowed_users:
