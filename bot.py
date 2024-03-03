@@ -83,26 +83,20 @@ def handle_start(message):
 
 
 
-
 @bot.message_handler(func=lambda message: message.text.strip().lower() in ['команды', 'сап команды', '.команды', '!команды', '/commands@sapcmbot', '/commands', '/команды'])
 def handle_help(message):
-            welcome_message = (
-                "Мой список команд доступен ниже\n"
-                "💡Если у вас есть идеи для бота, напишите [создателю](https://t.me/ww0qn) бота."
-            )
+    keyboard = types.InlineKeyboardMarkup()
+    url_button = types.InlineKeyboardButton(text="Команды", url="https://teletype.in/@drmotory/commands_support")
+    keyboard.add(url_button)
 
-            keyboard = types.InlineKeyboardMarkup()
-            url_button = types.InlineKeyboardButton(text="Команды", url="https://teletype.in/@drmotory/commands_support")
-            keyboard.add(url_button)
+    bot.send_message(message.chat.id, "Мой список команд доступен ниже", parse_mode='Markdown', reply_markup=keyboard)
 
-            bot.send_message(message.chat.id, welcome_message, parse_mode='Markdown', reply_markup=keyboard
-        welcome_message = "Мой список команд доступен ниже"
-        
-        keyboard = types.InlineKeyboardMarkup()
-        url_button = types.InlineKeyboardButton(text="Команды", url="https://teletype.in/@drmotory/commands_support")
-        keyboard.add(url_button)
-        
-        bot.send_message(message.chat.id, welcome_message, reply_markup=keyboard)
+    keyboard = types.InlineKeyboardMarkup()
+    url_button = types.InlineKeyboardButton(text="Команды", url="https://teletype.in/@drmotory/commands_support")
+    keyboard.add(url_button)
+    
+    bot.send_message(message.chat.id, "Мой список команд доступен ниже", reply_markup=keyboard)
+
 
 
         
