@@ -49,7 +49,7 @@ bot.set_my_commands(commands, scope=scope)
     
 
 #чат для тест драйва
-commands = [BotCommand('report', '🚫пожаловаться на пользователя'), BotCommand('commands', '📖команды'), BotCommand ('rules', '📝правила чата'), BotCommand ('grid', '🗂️чаты сетки'), BotCommand ('addcomands', '📝команды для админов')]
+commands = [BotCommand('commands', '📖команды'), BotCommand ('rules', '📝правила чата'), BotCommand ('grid', '🗂️чаты сетки'), BotCommand ('addcomands', '📝команды для админов')]
 scope = BotCommandScopeChat(chat_id=-1001940482569)
 bot.set_my_commands(commands, scope=scope)  
       
@@ -1126,7 +1126,7 @@ def delete_messages(message):
     
         
 admin_chat_id = '-1002129257694'
-message_limit = 5
+message_limit = 3
 time_window = 10
 alert_interval = 300
 alert_interval_per_user = 300
