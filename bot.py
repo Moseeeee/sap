@@ -95,8 +95,7 @@ def handle_help(message):
             url_button = types.InlineKeyboardButton(text="Команды", url="https://teletype.in/@drmotory/commands_support")
             keyboard.add(url_button)
 
-            bot.send_message(message.chat.id, welcome_message, parse_mode='Markdown', reply_markup=keyboard)
-    else:
+            bot.send_message(message.chat.id, welcome_message, parse_mode='Markdown', reply_markup=keyboard
         welcome_message = "Мой список команд доступен ниже"
         
         keyboard = types.InlineKeyboardMarkup()
