@@ -88,7 +88,6 @@ def handle_start(message):
 def handle_help(message):
     if message.chat.type == 'private':
         user_id = message.from_user.id
-        if user_id in admin_ids:
             admin_name = message.from_user.first_name
             admin_greeting = "💡Мой список админских команд доступен ниже.\n🚫Разглашение админских команд запрещено\n❗️Караеться снятием и удалением"
 
