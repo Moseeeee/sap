@@ -43,7 +43,7 @@ scope = BotCommandScopeChat(chat_id=-1002011140937)
 bot.set_my_commands(commands, scope=scope)  
 
 #Чат админов
-commands = [BotCommand('commands', '📖команды'), BotCommand ('rules', '📝правила чата'), BotCommand ('grid', '🗂️чаты сетки'), BotCommand ('addhelper', '✅добавиться в список админов'), BotCommand ('unhelper', '❌удалиться из списка админов'), BotCommands ('admncommands', '📝список админских команд')]
+commands = [BotCommand('commands', '📖команды'), BotCommand ('rules', '📝правила чата'), BotCommand ('grid', '🗂️чаты сетки'), BotCommand ('addhelper', '✅добавиться в список админов'), BotCommand ('unhelper', '❌удалиться из списка админов'), BotCommand ('admncommands', '📝список админских команд')]
 scope = BotCommandScopeChat(chat_id=-1002129257694)
 bot.set_my_commands(commands, scope=scope)
     
