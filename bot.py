@@ -82,20 +82,13 @@ def handle_start(message):
 
 
 
-
 @bot.message_handler(func=lambda message: message.text.strip().lower() in ['команды', 'сап команды', '.команды', '!команды', '/commands@sapcmbot', '/commands', '/команды'])
 def handle_help(message):
     keyboard = types.InlineKeyboardMarkup()
     url_button = types.InlineKeyboardButton(text="Команды", url="https://teletype.in/@drmotory/commands_support")
     keyboard.add(url_button)
 
-    bot.send_message(message.chat.id, "Мой список команд доступен ниже", parse_mode='Markdown', reply_markup=keyboard)
-
-    keyboard = types.InlineKeyboardMarkup()
-    url_button = types.InlineKeyboardButton(text="Команды", url="https://teletype.in/@drmotory/commands_support")
-    keyboard.add(url_button)
-    
-    bot.send_message(message.chat.id, "Мой список команд доступен ниже", reply_markup=keyboard)
+    bot.send_message(message.chat.id, "Мой список команд доступен по ссылке ниже:", reply_markup=keyboard)
 
 
 
