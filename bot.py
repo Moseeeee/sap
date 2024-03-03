@@ -86,18 +86,6 @@ def handle_start(message):
 
 @bot.message_handler(func=lambda message: message.text.strip().lower() in ['команды', 'сап команды', '.команды', '!команды', '/commands@sapcmbot', '/commands', '/команды'])
 def handle_help(message):
-    if message.chat.type == 'private':
-        user_id = message.from_user.id
-            admin_name = message.from_user.first_name
-            admin_greeting = "💡Мой список админских команд доступен ниже.\n🚫Разглашение админских команд запрещено\n❗️Караеться снятием и удалением"
-
-            admin_keyboard = types.InlineKeyboardMarkup()
-            admin_url_button = types.InlineKeyboardButton(text="Админские команды", url="https://teletype.in/@drmotory/98olfMhylw5")
-            user_url_button = types.InlineKeyboardButton(text="Обычные команды", url="https://teletype.in/@drmotory/commands_support")
-            admin_keyboard.add(admin_url_button, user_url_button)
-
-            bot.send_message(message.chat.id, admin_greeting, parse_mode='Markdown', reply_markup=admin_keyboard)
-        else:
             welcome_message = (
                 "Мой список команд доступен ниже\n"
                 "💡Если у вас есть идеи для бота, напишите [создателю](https://t.me/ww0qn) бота."
